@@ -17,16 +17,9 @@ class Request {
 
 	private $_requestUri;
 	private $_pathInfo;
-	private $_scriptFile;
 	private $_scriptUrl;
 	private $_hostInfo;
 	private $_baseUrl;
-	private $_cookies;
-	private $_preferredAcceptTypes;
-	private $_preferredLanguages;
-	private $_csrfToken;
-	private $_restParams;
-	private $_httpVersion;
 
     /**
      * Returns the relative URL for the application.
