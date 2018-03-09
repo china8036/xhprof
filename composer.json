@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Qqes\\Xhprof": "src/"
+            "Qqes\\Xhprof\\": "src/"
         }
     }
 }
