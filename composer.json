@@ -1,0 +1,19 @@
+{
+    "name": "qqes/xhprof",
+    "description": "QQES xhprof EXTEND",
+    "keywords": ["qqes", "xhprof"],
+    "type": "library",
+    "homepage": "http://www.7724.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "QQES_ZH",
+            "homepage": "http://www.7724.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Qqes\\Xhprof": "src/"
+        }
+    }
+}
