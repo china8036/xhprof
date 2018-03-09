@@ -26,5 +26,6 @@ CREATE TABLE `xdetail` (
   `xid` int(10) unsigned NOT NULL COMMENT 'xhprof id',
   `content` mediumtext COMMENT '内容',
   `create_at` int(11) NOT NULL COMMENT '添加时间',
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  INDEX(`xid`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='xhprof信息存储内容';
