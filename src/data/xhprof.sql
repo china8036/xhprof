@@ -21,7 +21,7 @@ CREATE TABLE `xhprof` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='xhprof信息表';
 
 
-CREATE TABLE `xhprof_detail` (
+CREATE TABLE `xdetail` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `xid` int(10) unsigned NOT NULL COMMENT 'xhprof id',
   `content` mediumtext COMMENT '内容',
