@@ -60,6 +60,14 @@ class Prof {
             
     
     
+    /**
+     * 
+     * @param type $dsn
+     * @param type $user
+     * @param type $pwd
+     * @return $this
+     * @throws Exception
+     */
     function __construct($dsn, $user, $pwd) {
         if(!extension_loaded('xhprof')){
             throw new Exception('please install xhprof：http://php.net/manual/zh/book.xhprof.php');
@@ -69,17 +77,32 @@ class Prof {
         $this->dsn = $dsn;
         $this->user = $user;
         $this->pwd = $pwd;
+        return $this;
       
     }
     
+    /**
+     * 
+     * @param type $xhprof_flags
+     * @param type $xhprof_options
+     * @return $this
+     */
     public function setXhprofParams($xhprof_flags, $xhprof_options){
         $this->xhprof_flags = $xhprof_flags;
         $this->xhprof_options = $xhprof_options;
+        return $this;
     }
     
     
+    
+    /**
+     * 
+     * @param type $project
+     * @return $this
+     */
     public function setProjectName($project){
         $this->project = $project;
+        return $this;
     }
     /**
      * 
