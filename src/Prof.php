@@ -13,6 +13,8 @@ namespace Qqes\Xhprof;
  */
 use \RedBeanPHP\R as R;
 
+define('REDBEAN_MODEL_PREFIX', '\Qqes\Xhprof\Model');
+
 class Prof {
     //put your code here
     
@@ -87,7 +89,7 @@ class Prof {
      * @param type $xhprof_options
      * @return $this
      */
-    public function setXhprofParams($xhprof_flags, $xhprof_options){
+    public function setXhprofParams($xhprof_flags, $xhprof_options = array()){
         $this->xhprof_flags = $xhprof_flags;
         $this->xhprof_options = $xhprof_options;
         return $this;
@@ -119,7 +121,7 @@ class Prof {
     protected  function save($data){
              $request = new Request();
              R::setup($this->dsn, $this->user, $this->pwd);
-             $xhprof = R::dispense('xhprof');
+             $xhprof =  R::dispense('xhprof');
              $xhprof->path = $request->getPathInfo();
              $xhprof->url = $request->getRequestUri();
              $xhprof->post_data = serialize($request->getPostData());
@@ -140,7 +142,7 @@ class Prof {
      */
     protected function registerShutDown(){
         register_shutdown_function(function(){
-             //fastcgi_finish_request();//冲刷(flush)所有响应的数据给客户端 http://php.net/manual/zh/function.fastcgi-finish-request.php
+             fastcgi_finish_request();//冲刷(flush)所有响应的数据给客户端 http://php.net/manual/zh/function.fastcgi-finish-request.php
              $this->save(xhprof_disable());
         });
     }
